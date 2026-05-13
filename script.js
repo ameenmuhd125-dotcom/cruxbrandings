@@ -105,4 +105,29 @@ document.addEventListener("DOMContentLoaded", () => {
             item.classList.toggle('active');
         });
     });
+
+    // Mobile Menu Toggle
+    const kebabBtn = document.getElementById('kebab-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (kebabBtn && mobileMenu) {
+        kebabBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside (on the overlay itself)
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    }
 });

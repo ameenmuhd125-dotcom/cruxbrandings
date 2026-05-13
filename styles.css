@@ -123,8 +123,55 @@ h1, h2, h3, h4, h5, .logo {
     align-items: center;
 }
 
-.mobile-menu-widget {
+.kebab-menu-icon {
     display: none;
+    cursor: pointer;
+    color: var(--text-main);
+    z-index: 1001;
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(252, 252, 252, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.mobile-nav-links a {
+    font-size: 2rem;
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--brand-color);
 }
 
 .nav-links a {
@@ -783,7 +830,9 @@ section {
 }
 
 @media (max-width: 992px) {
-    .navbar { padding: 1.5rem 2rem; flex-direction: column; gap: 1.5rem; }
+    .navbar { padding: 1.5rem 2rem; flex-direction: row; justify-content: space-between; align-items: center; }
+    .nav-links { display: none; }
+    .kebab-menu-icon { display: block; }
     section { padding: 5rem 2rem; }
     .hero-container { flex-direction: column; padding: 0 2rem; height: auto; min-height: 100vh; justify-content: center; padding-top: 5rem; }
     .hero-content { max-width: 100%; text-align: left; display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 4rem; }
@@ -801,52 +850,23 @@ section {
     .footer { padding: 4rem 2rem 2rem; }
     .footer-content { flex-direction: column; align-items: flex-start; gap: 2rem; }
     .services-marquee-wrapper { margin-left: -2rem; }
+    .why-box, .ig-post {
+        animation: none !important;
+        transform: none !important;
+    }
 }
 
 @media (max-width: 768px) {
     .hero-title { font-size: 4.5rem; }
     .hero-text-columns { grid-template-columns: 1fr; gap: 1.5rem; }
     .nav-links { display: none; }
-    
-    .mobile-menu-widget {
-        display: flex;
-        position: fixed;
-        bottom: 25px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        z-index: 1000;
-        gap: 1.5rem;
-        padding: 0.8rem 2rem;
-        width: auto;
-        max-width: 95vw;
-        justify-content: space-between;
-    }
-
-    .mobile-menu-widget a {
-        color: var(--text-main);
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 500;
-        white-space: nowrap;
-    }
-    
-    .mobile-menu-widget a:hover,
-    .mobile-menu-widget a:active {
-        color: var(--brand-color);
-    }
     .floating-cards-container { display: none; } /* Hide heavy 3D elements on smaller phones */
     .hero-container { padding-top: 2rem; }
     .section-header h2 { font-size: 2.5rem; }
     .stat-number h2 { font-size: 3.5rem; }
     .stat-number span { font-size: 2.5rem; }
     .ig-grid { grid-template-columns: 1fr; }
-    .whatsapp-widget { bottom: 100px; right: 20px; width: 50px; height: 50px; }
+    .whatsapp-widget { bottom: 20px; right: 20px; width: 50px; height: 50px; }
     .whatsapp-widget svg { width: 25px; height: 25px; }
     .service-box, .work-item { width: 280px; }
     .work-img-placeholder { height: 200px; }
@@ -856,14 +876,6 @@ section {
 }
 
 @media (max-width: 480px) {
-    .mobile-menu-widget {
-        padding: 0.8rem 1.2rem;
-        gap: 1rem;
-        width: 95vw;
-    }
-    .mobile-menu-widget a {
-        font-size: 0.8rem;
-    }
     .navbar { padding: 1rem; }
     section { padding: 4rem 1rem; }
     .hero-container { padding: 1rem; padding-top: 2rem; }
