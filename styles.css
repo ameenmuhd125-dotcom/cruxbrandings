@@ -19,12 +19,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-body);
-    overflow-x: hidden; /* Changed to allow scrolling */
-    width: 100vw;
     position: relative;
 }
 
@@ -118,6 +121,10 @@ h1, h2, h3, h4, h5, .logo {
     display: flex;
     gap: 3.5rem;
     align-items: center;
+}
+
+.mobile-menu-widget {
+    display: none;
 }
 
 .nav-links a {
@@ -799,14 +806,47 @@ section {
 @media (max-width: 768px) {
     .hero-title { font-size: 4.5rem; }
     .hero-text-columns { grid-template-columns: 1fr; gap: 1.5rem; }
-    .nav-links { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .nav-links { display: none; }
+    
+    .mobile-menu-widget {
+        display: flex;
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+        gap: 1.5rem;
+        padding: 0.8rem 2rem;
+        width: auto;
+        max-width: 95vw;
+        justify-content: space-between;
+    }
+
+    .mobile-menu-widget a {
+        color: var(--text-main);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    
+    .mobile-menu-widget a:hover,
+    .mobile-menu-widget a:active {
+        color: var(--brand-color);
+    }
     .floating-cards-container { display: none; } /* Hide heavy 3D elements on smaller phones */
     .hero-container { padding-top: 2rem; }
     .section-header h2 { font-size: 2.5rem; }
     .stat-number h2 { font-size: 3.5rem; }
     .stat-number span { font-size: 2.5rem; }
     .ig-grid { grid-template-columns: 1fr; }
-    .whatsapp-widget { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    .whatsapp-widget { bottom: 100px; right: 20px; width: 50px; height: 50px; }
     .whatsapp-widget svg { width: 25px; height: 25px; }
     .service-box, .work-item { width: 280px; }
     .work-img-placeholder { height: 200px; }
@@ -816,11 +856,19 @@ section {
 }
 
 @media (max-width: 480px) {
+    .mobile-menu-widget {
+        padding: 0.8rem 1.2rem;
+        gap: 1rem;
+        width: 95vw;
+    }
+    .mobile-menu-widget a {
+        font-size: 0.8rem;
+    }
     .navbar { padding: 1rem; }
     section { padding: 4rem 1rem; }
     .hero-container { padding: 1rem; padding-top: 2rem; }
     .hero-title { font-size: 3.2rem; }
-    .nav-links { gap: 1rem; flex-direction: column; align-items: center; }
+    .nav-links { display: none; }
     .nav-links a { font-size: 1rem; }
     .hero-subtitle { font-size: 1rem; }
     .btn-primary { padding: 0.8rem 1.5rem; font-size: 0.8rem; }
@@ -830,4 +878,5 @@ section {
     .glass-card { padding: 1.5rem; }
     .glass-card h3 { font-size: 1.25rem; }
     .faq-header h3 { font-size: 1rem; }
+    .services-marquee-wrapper { margin-left: -1rem; }
 }
