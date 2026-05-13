@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crux Brandings | Premier Branding & UI/UX Agency</title>
     <!-- Fonts -->
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -33,41 +34,16 @@
         <!-- Hero Section -->
         <section class="hero-container" id="home">
             <div class="hero-content float-element" data-speed="1.5">
-                <div class="badge">Elevating Digital Experiences</div>
-                <h1 class="hero-title">Defying Gravity in <span class="text-accent">Design</span>.</h1>
-                <p class="hero-subtitle">We are Crux Brandings, a premier UI/UX and branding agency based in the UAE. We craft immersive, multi-dimensional digital environments that transcend expectations.</p>
-                <div class="hero-actions">
-                    <a href="#work" class="btn-primary glow-btn">Explore Our Universe</a>
+                <h1 class="hero-title">We Shape Your Business<br>Into a <span class="text-accent">Global Brand.</span></h1>
+                <div class="hero-bottom">
+                    <div class="hero-text-columns">
+                        <p class="hero-subtitle">We are Crux Brandings, a premier UI/UX and branding agency based in the UAE.</p>
+                        <p class="hero-subtitle">We craft immersive, multi-dimensional digital environments that transcend expectations.</p>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#work" class="btn-primary glow-btn">Start Your Brand Transformation</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="floating-cards-container">
-                <!-- Mini floating abstract items in hero -->
-                <div class="glass-card float-element" data-speed="-1.2" style="--delay: 0s; padding: 1.5rem; width: 220px;">
-                    <div class="card-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">✨</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0;">Brand Strategy</h3>
-                </div>
-                
-                <div class="glass-card float-element" data-speed="2.5" style="--delay: -1.5s; padding: 1.5rem; width: 220px;">
-                    <div class="card-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0;">UI/UX Design</h3>
-                </div>
-                
-                <div class="glass-card float-element" data-speed="-2.0" style="--delay: -3s; padding: 1.5rem; width: 220px;">
-                    <div class="card-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">🌐</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0;">Web Dev</h3>
-                </div>
-                
-                <div class="glass-card float-element card-blur" data-speed="1.8" style="--delay: -2s; padding: 1.5rem; width: 220px;">
-                    <div class="card-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">📐</div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0;">3D & Motion</h3>
-                </div>
-                
-                <!-- Antigravity Particles -->
-                <div class="orb orb-1 float-element" data-speed="3"></div>
-                <div class="orb orb-2 float-element" data-speed="-4"></div>
-                <div class="orb orb-3 float-element" data-speed="2"></div>
-                <div class="orb orb-4 float-element" data-speed="-1.5"></div>
             </div>
         </section>
 
@@ -391,12 +367,14 @@
     <!-- Footer -->
     <footer class="footer float-element" data-speed="0.2">
         <div class="footer-content">
-            <div style="display: flex; align-items: center; gap: 1rem; cursor: pointer; margin-bottom: 1rem;">
-                <img src="logo.png.png" alt="Crux Brandings Logo" class="logo-img">
-                <div class="logo" style="margin-bottom: 0;">crux.</div>
+            <div class="footer-left">
+                <div style="display: flex; align-items: center; gap: 1rem; cursor: pointer; margin-bottom: 1rem;">
+                    <img src="logo.png.png" alt="Crux Brandings Logo" class="logo-img">
+                    <div class="logo" style="margin-bottom: 0;">crux.</div>
+                </div>
+                <p style="max-width: 400px; color: var(--text-muted); line-height: 1.6;">Elevating digital experiences from the UAE to the world. A premier branding and UI/UX design agency.</p>
             </div>
-            <p style="max-width: 400px; color: var(--text-muted); line-height: 1.6;">Elevating digital experiences from the UAE to the world. A premier branding and UI/UX design agency.</p>
-            <div class="social-icons" style="margin-top: 1.5rem; display: flex; gap: 1.5rem;">
+            <div class="social-icons" style="display: flex; gap: 1.5rem; align-items: center;">
                 <a href="https://www.instagram.com/cruxbrandings/" target="_blank" style="color: var(--text-main); transition: color 0.3s;" onmouseover="this.style.color='var(--brand-color)'" onmouseout="this.style.color='var(--text-main)'" aria-label="Instagram">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
